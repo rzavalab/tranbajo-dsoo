@@ -1,0 +1,24 @@
+
+> Ejercito 0: Moros
+   Soldados creados: 1
+   Espadachines0
+   Lanceros1
+   Caballeros0
+   Arqueros0
+
+> Ejercito 1: Inglaterra
+   Soldados creados: 4
+   Espadachines0
+   Lanceros1
+   Caballeros1
+   Arqueros2
+
+> Ejercito 0: 21.21212121212121% probabilidad de victoria
+
+> Ejercito 1: 78.78787878787878% probabilidad de victoria
+
+> El ganador es el ejercito 1 de: Moros.
+   Ya que al generar los porcentajes de probabilidad de victoria basada
+   en los niveles de vida de sus soldados y aplicando un experimento 
+   aleatorio salió vencedor. (Aleatorio generado: 35.432590120340414)
+> turno ejercito 0
