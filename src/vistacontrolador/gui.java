@@ -64,7 +64,7 @@ public class gui extends JFrame {
         });
         try {
             ObjectOutputStream out = new ObjectOutputStream(
-                new FileOutputStream("guardados/guardarconfiguracion.dat"));
+                new FileOutputStream("guardarconfiguracion.dat"));
             out.writeObject(Tablero);
             out.close();
         } catch (Exception e2) {
@@ -72,7 +72,7 @@ public class gui extends JFrame {
         }
         try {
             DataOutputStream out = new DataOutputStream(
-                new FileOutputStream("guardados/guardarranking.bin")
+                new FileOutputStream("guardarranking.bin")
             );
             out.writeUTF(guardarranking);
             out.close();
@@ -114,7 +114,7 @@ public class gui extends JFrame {
             actualizar();
             try {
                 ObjectOutputStream out = new ObjectOutputStream(
-                    new FileOutputStream("guardados/guardarconfiguracion.dat"));
+                    new FileOutputStream("guardarconfiguracion.dat"));
                 out.writeObject(Tablero);
                 out.close();
                 Tablero.imprimirdatos0();
@@ -131,7 +131,7 @@ public class gui extends JFrame {
         abrir.addActionListener(e -> {
             try {
                 ObjectInputStream in = new ObjectInputStream(
-                    new FileInputStream("guardados/guardar.dat"));
+                    new FileInputStream("guardar.dat"));
                 Tablero = (tablero) in.readObject();
                 in.close();
                 Tablero.setgui(this); 
@@ -147,7 +147,7 @@ public class gui extends JFrame {
         JMenuItem abrirLogs = new JMenuItem("Abrir logs");
         abrirLogs.addActionListener(e -> {try {
                 DataInputStream in = new DataInputStream(
-                    new FileInputStream("guardados/guardarlog.bin")
+                    new FileInputStream("guardarlog.bin")
                 );
                 guardarlog = in.readUTF();
                 in.close();
@@ -162,7 +162,7 @@ public class gui extends JFrame {
         guardar.addActionListener(e -> { 
             try {
                 ObjectOutputStream out = new ObjectOutputStream(
-                    new FileOutputStream("guardados/guardar.dat"));
+                    new FileOutputStream("guardar.dat"));
                 out.writeObject(Tablero);
                 out.close();
                 JOptionPane.showMessageDialog(this, "guardado correctamente");
@@ -176,7 +176,7 @@ public class gui extends JFrame {
         guardar_logs.addActionListener(e -> {
             try {
                 DataOutputStream out = new DataOutputStream(
-                    new FileOutputStream("guardados/guardarlog.bin")
+                    new FileOutputStream("guardarlog.bin")
                 );
                 out.writeUTF(guardarlog);
                 out.close();
@@ -191,7 +191,7 @@ public class gui extends JFrame {
         guardar_ranking.addActionListener(e -> { 
         try {
             DataOutputStream out = new DataOutputStream(
-                new FileOutputStream("guardados/guardarranking.bin")
+                new FileOutputStream("guardarranking.bin")
             );
             guardarranking = "jugador 0 total de bajas enemigas: " + Tablero.getmuertes0() + "\n" + "   jugador 1 total de bajas enemigas: " + Tablero.getmuertes1() + "\n";
             out.writeUTF(guardarranking);
@@ -201,7 +201,7 @@ public class gui extends JFrame {
         }
         try {
             DataInputStream in = new DataInputStream(
-                new FileInputStream("guardados/guardarranking.bin"));
+                new FileInputStream("guardarranking.bin"));
             guardarranking = in.readUTF();
             in.close();
         } catch (Exception e3) {
@@ -214,7 +214,7 @@ public class gui extends JFrame {
         JMenuItem guardar_config = new JMenuItem("Guardar configuracion");
         guardar_config.addActionListener(e -> { 
             Path guardarconfiguracion = Path.of("guardarconfiguracion.dat");
-            Path guardaranteriror = Path.of("guardados/guardar.dat");
+            Path guardaranteriror = Path.of("guardar.dat");
             try {
                 Files.copy(guardarconfiguracion, guardaranteriror, StandardCopyOption.REPLACE_EXISTING);
             } catch (IOException e4) {
@@ -315,3 +315,4 @@ public class gui extends JFrame {
         setVisible(true);
     }
 }
+
